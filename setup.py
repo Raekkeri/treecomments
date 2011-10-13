@@ -12,5 +12,6 @@ setup(name='treecomments',
         },
     install_requires=[
         'setuptools',
+        'django-mptt',
         ],
 )
