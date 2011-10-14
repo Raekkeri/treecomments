@@ -10,3 +10,8 @@ class TreeCommentManager(models.Manager):
         qs = Comment.objects.filter(object_pk=obj.pk, content_type=ctype)
         qs = qs.order_by('tree_id', 'lft')
         return qs
+
+    def all_comments(self):
+        qs = Comment.objects.all()
+        qs = qs.order_by('tree_id', 'lft')
+        return qs
