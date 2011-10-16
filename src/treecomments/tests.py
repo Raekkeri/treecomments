@@ -9,6 +9,11 @@ from django.contrib.contenttypes.models import ContentType
 Comment = comments.get_model()
 
 
+def create_comment(obj, title=None, **kwargs):
+    return Comment.objects.create(content_object=obj,
+        title=title, site_id=settings.SITE_ID, **kwargs)
+
+
 class TreeCommentTestCase(unittest.TestCase):
     def setUp(self):
         self.user = User.objects.create(username='user1')
@@ -21,8 +26,7 @@ class TreeCommentTestCase(unittest.TestCase):
 
     def create_comment(self, obj=None, title=None, **kwargs):
         obj = obj or self.user
-        return Comment.objects.create(content_object=obj,
-            title=title, site_id=settings.SITE_ID, **kwargs)
+        return create_comment(obj, title, **kwargs)
 
 
 class SanityCheck(unittest.TestCase):
