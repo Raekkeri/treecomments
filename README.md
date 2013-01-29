@@ -18,4 +18,6 @@ Add following to ``INSTALLED_APPS``
 'treecomments',
 ```
 
+Also set ``COMMENTS_APP = 'treecomments'``.
+
 And then run ``syncdb`` command.
