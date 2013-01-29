@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(name='treecomments',
-    version='0.01',
+    version='0.1',
     description='Django tree-like comments',
     author='Teemu Husso',
     author_email='teemu.husso@gmail.com',
     url='',
-    packages=find_packages(exclude=['ez_setup']),
+    packages=find_packages('src', exclude=['ez_setup']),
     package_dir={
         '': 'src',
         },
