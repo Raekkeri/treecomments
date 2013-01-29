@@ -3,7 +3,6 @@ import unittest
 from django.contrib import comments
 from django.contrib.auth.models import User
 from django.conf import settings
-from django.contrib.contenttypes.models import ContentType
 
 
 Comment = comments.get_model()
@@ -31,7 +30,7 @@ class TreeCommentTestCase(unittest.TestCase):
 
 class SanityCheck(unittest.TestCase):
     def test_mptt_fields(self):
-        self.assert_(hasattr(Comment, 'tree'))
+        self.assert_(hasattr(Comment, 'get_children'))
 
 
 class TestModel(TreeCommentTestCase):
