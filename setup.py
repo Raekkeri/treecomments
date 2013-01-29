@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='treecomments',
-    version='0.01',
+    version='0.1',
     description='Django tree-like comments',
     author='Teemu Husso',
     author_email='teemu.husso@gmail.com',
